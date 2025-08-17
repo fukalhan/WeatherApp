@@ -1,0 +1,16 @@
+package cz.fukalhan.ctweatherapp.domain.usecase
+
+import cz.fukalhan.ctweatherapp.domain.model.WeatherForecast
+import cz.fukalhan.ctweatherapp.domain.repository.CityRepository
+import cz.fukalhan.ctweatherapp.domain.repository.WeatherRepository
+import java.time.LocalDate
+
+class GetWeatherForecastForCityUseCase(
+    private val cityRepository: CityRepository,
+    private val weatherRepository: WeatherRepository
+) {
+    suspend operator fun invoke(cityName: String, date: LocalDate): WeatherForecast? {
+        val city = cityRepository.resolveCity(cityName) ?: return null
+        return weatherRepository.getForecastForCity(city, date)
+    }
+}
