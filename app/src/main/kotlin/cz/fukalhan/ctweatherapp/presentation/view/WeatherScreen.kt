@@ -24,6 +24,11 @@ import cz.fukalhan.ctweatherapp.presentation.model.WeatherScreenVo
 import cz.fukalhan.ctweatherapp.ui.ScreenPreview
 import java.time.LocalDate
 
+/**
+ * Composable function that displays the weather screen.
+ *
+ * @param viewModel The ViewModel that provides the state and handles events for this screen.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WeatherScreen(
@@ -47,7 +52,7 @@ fun WeatherScreen(
         state = viewState
     ) {
         Scaffold(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         ) { padding ->
 
             WeatherScreenContent(

@@ -26,6 +26,13 @@ import androidx.compose.ui.unit.dp
 import cz.fukalhan.ctweatherapp.presentation.model.WeatherForecastVo
 import cz.fukalhan.ctweatherapp.presentation.model.WeatherScreenEvent
 
+/**
+ * Composable function that displays a horizontal carousel of dates for weather forecasts.
+ *
+ * @param forecasts List of weather forecasts to display in the carousel.
+ * @param selectedIndex Index of the currently selected date in the carousel.
+ * @param onDaySelected Callback invoked when a date is selected, passing the selected date event.
+ */
 @Composable
 internal fun DateCarouselPager(
     forecasts: List<WeatherForecastVo>,

@@ -13,6 +13,7 @@ import androidx.compose.material3.SheetState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import cz.fukalhan.ctweatherapp.presentation.model.WeatherScreenEvent
 
@@ -39,16 +40,20 @@ internal fun CitiesBottomSheet(
             )
             LazyColumn {
                 items(availableCities) { city ->
+                    val isSelected = city == selectedCity
                     Text(
                         text = city,
-                        style = MaterialTheme.typography.bodyLarge,
+                        style = MaterialTheme.typography.bodyLarge.copy(
+                            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
+                        ),
+                        color = if (isSelected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
                                 sendEvent(WeatherScreenEvent.OnCitySelected(city))
                                 onDismiss()
                             }
-                            .padding(vertical = 12.dp)
+                            .padding(vertical = 12.dp, horizontal = 8.dp)
                     )
                 }
             }

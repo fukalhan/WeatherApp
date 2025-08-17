@@ -12,6 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * A composable function that wraps the content of a screen and displays a loading indicator
+ */
 @Composable
 fun ScreenContentWrapper(
     state: UiState<*>,

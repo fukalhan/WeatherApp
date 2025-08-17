@@ -16,6 +16,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
+/**
+ * Composable function that displays minimum and maximum temperatures in a card format.
+ *
+ * @param minTemp The minimum temperature to display.
+ * @param maxTemp The maximum temperature to display.
+ * @param modifier Optional [Modifier] to customize the layout.
+ */
 @Composable
 internal fun MinMaxTemp(
     minTemp: Double,

@@ -18,6 +18,13 @@ import androidx.compose.ui.unit.dp
 import cz.fukalhan.ctweatherapp.R
 import cz.fukalhan.ctweatherapp.presentation.model.WeatherScreenEvent
 
+/**
+ * Composable function that displays a row for selecting a city in the weather application.
+ *
+ * @param selectedCity The currently selected city, or null if no city is selected.
+ * @param sendEvent Function to send events related to the weather screen.
+ * @param modifier Optional modifier for styling the row.
+ */
 @Composable
 internal fun CityRow(
     selectedCity: String?,
